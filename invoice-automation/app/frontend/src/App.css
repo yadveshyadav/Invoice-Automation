@@ -1,0 +1,157 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  padding: 2rem;
+  color: #abbdda;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.page-header p {
+  margin: 0.5rem 0 0;
+  color: #4b5563;
+}
+
+.upload-section {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.upload-card,
+.upload-debug {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.upload-card h2,
+.upload-debug h2,
+.invoice-records h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.selected-file,
+.status-message {
+  margin: 0.75rem 0 0;
+  color: #475569;
+}
+
+.invoice-table,
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-table th,
+.invoice-table td,
+.detail-table th,
+.detail-table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.invoice-table th,
+.detail-table th {
+  background: #f9fafb;
+  text-align: left;
+  color: #334155;
+}
+
+.invoice-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.detail-table th {
+  width: 160px;
+  font-weight: 600;
+  background: #f3f4f6;
+}
+
+.invoice-table input {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.action-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.action-cell button {
+  background: #0f172a;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.45rem;
+  font-size: 0.9rem;
+}
+
+.action-cell button:hover {
+  opacity: 0.9;
+}
+
+.invoice-records {
+  margin-bottom: 2rem;
+}
+
+details {
+  margin-top: 1rem;
+}
+
+pre {
+  background: #111827;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-height: 260px;
+  overflow: auto;
+}
+
+@media (max-width: 720px) {
+  .button-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,47 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0f172a 0%, #071022 100%);
+  color: #e6eef8;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Landing animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateX(18px) scale(0.98); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.page-animate {
+  animation: slideFadeIn 420ms ease-out both;
+}
+
+.landing-hero {
+  animation: fadeInUp 700ms ease-out both;
+}
+
+.stat-card-anim {
+  animation: fadeInUp 900ms ease-out both, floatY 4s ease-in-out 1.2s infinite;
+}
+
+.stat-card-anim.delay-1 { animation-delay: 0.1s, 1.2s; }
+.stat-card-anim.delay-2 { animation-delay: 0.2s, 1.2s; }
+.stat-card-anim.delay-3 { animation-delay: 0.3s, 1.2s; }
+.stat-card-anim.delay-4 { animation-delay: 0.4s, 1.2s; }
