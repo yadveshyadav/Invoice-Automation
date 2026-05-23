@@ -5,12 +5,12 @@ import re
 import shutil
 import uuid
 
-from ..database import SessionLocal
-from ..models import Invoice
-from ..schemas import InvoiceUpdate
-from ..services.parser import parse_invoice
-from ..services.ocr_services import extract_text
-from ..services.pdf_services import extract_text_from_pdf
+from database import SessionLocal
+from models import Invoice
+from schemas import InvoiceUpdate
+from services.parser import parse_invoice
+from services.ocr_services import extract_text
+from services.pdf_services import extract_text_from_pdf
 
 router = APIRouter()
 

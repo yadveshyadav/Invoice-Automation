@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from .database import engine, ensure_invoice_columns
-from .models import Base
-from .routes.upload import router as upload_router
+from database import engine, ensure_invoice_columns
+from models import Base
+from routes.upload import router as upload_router
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.include_router(upload_router)
