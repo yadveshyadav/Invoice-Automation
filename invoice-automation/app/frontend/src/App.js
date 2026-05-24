@@ -2,7 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:8000/api"
+    : "/api");
+
+const api = axios.create({ baseURL: API_URL });
 
 function App() {
 
@@ -51,7 +57,7 @@ function App() {
 
   const fetchInvoices = useCallback(async () => {
     try {
-      const res = await axios.get(`${API_URL}/invoices`);
+      const res = await api.get("/invoices");
       setInvoices(
         res.data.map((invoice) => ({
           ...invoice,
@@ -90,7 +96,7 @@ function App() {
 
   const handleDeleteInvoice = async (invoiceId) => {
     try {
-      await axios.delete(`${API_URL}/invoices/${invoiceId}`);
+      await api.delete(`/invoices/${invoiceId}`);
       setInvoices((prev) => prev.filter((invoice) => invoice.id !== invoiceId));
     } catch (err) {
       console.error("Failed to delete invoice:", err);
@@ -105,7 +111,7 @@ function App() {
     const date = window.prompt("Date", invoice.date) ?? invoice.date;
 
     try {
-      const res = await axios.put(`${API_URL}/invoices/${invoice.id}`, {
+      const res = await api.put(`/invoices/${invoice.id}`, {
         vendor,
         invoice_number,
         amount: String(amountInput),
@@ -138,11 +144,7 @@ function App() {
     formData.append("file", selectedFile);
 
     try {
-      const res = await axios.post(`${API_URL}/upload`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const res = await api.post("/upload", formData);
 
       const uploadedInvoice = {
         ...res.data,

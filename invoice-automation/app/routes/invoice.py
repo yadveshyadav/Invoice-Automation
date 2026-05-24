@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from models import Invoice
+from app.database import SessionLocal
+from app.models import Invoice
 
 router = APIRouter()
 
