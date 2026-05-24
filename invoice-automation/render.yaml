@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: invoice-automation-backend
+    env: docker
+    plan: free
+    dockerfile: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
