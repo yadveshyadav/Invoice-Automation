@@ -1,10 +1,10 @@
 services:
   - type: web
     name: invoice-automation-backend
-    env: docker
+    env: python
     plan: free
-    dockerfile: ./Dockerfile
-    dockerContext: .
+    buildCommand: "cd app && pip install -r requirements.txt"
+    startCommand: "cd app && uvicorn main:app --host 0.0.0.0 --port $PORT"
     autoDeploy: true
     envVars:
       - key: PYTHONUNBUFFERED
