@@ -47,7 +47,7 @@ function Sidebar({
 
   return (
 
-    <div className={`${collapsed ? "w-20 p-3" : "w-64 p-5"} bg-slate-900 min-h-screen border-r border-slate-800 transition-all duration-300 relative overflow-hidden`}>
+    <div className={`${collapsed ? "w-full md:w-20 p-3" : "w-full md:w-64 p-5"} bg-slate-900 min-h-screen md:min-h-screen border-b md:border-b-0 md:border-r border-slate-800 transition-all duration-300 relative overflow-hidden`}>
 
       <div className={`flex items-center justify-between ${collapsed ? "mb-4" : "mb-6"}`}>
 

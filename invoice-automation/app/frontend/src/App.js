@@ -205,7 +205,7 @@ function App() {
 
   return (
 
-    <div className="flex min-h-screen bg-slate-950 text-white">
+    <div className="flex min-h-screen flex-col md:flex-row bg-slate-950 text-white">
 
       {/* SIDEBAR */}
 
@@ -216,9 +216,9 @@ function App() {
 
       {/* MAIN */}
 
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-4 md:p-8">
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto w-full px-0 sm:px-4">
 
           {/* HEADER */}
 
@@ -486,7 +486,7 @@ function App() {
 
               <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl">
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
                 <h2 className="text-3xl font-bold">
 
@@ -496,7 +496,7 @@ function App() {
 
                 {/* SEARCH */}
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-end w-full">
                   <input
                     type="text"
                     placeholder="Search invoices..."
