@@ -205,7 +205,7 @@ function App() {
 
   return (
 
-    <div className="flex min-h-screen flex-col md:flex-row bg-slate-950 text-white">
+    <div className="flex min-h-screen flex-row bg-slate-950 text-white app-shell">
 
       {/* SIDEBAR */}
 
@@ -550,7 +550,7 @@ function App() {
                   </div>
                 )}
                 {viewMode === "table" && (
-                  <table className="w-full">
+                  <table className="invoice-table">
 
                   <thead>
 
@@ -626,61 +626,61 @@ function App() {
                       >
 
 
-                        <td className="py-5">
+                        <td className="py-5" data-label="Vendor">
 
                           {invoice.vendor}
 
                         </td>
 
-                        <td className="text-center text-slate-300">
+                        <td className="text-center text-slate-300" data-label="Invoice #">
 
                           {invoice.invoice_number || "-"}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="GSTIN">
 
                           {invoice.gstin || "-"}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="Amount">
 
                           {formatCurrency(invoice.amount)}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="Date">
 
                           {invoice.date}
 
                         </td>
 
-                        <td className="text-center text-green-400">
+                        <td className="text-center text-green-400" data-label="Status">
 
                           {invoice.status}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="SGST">
 
                           {formatTaxValue(invoice.sgst)}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="CGST">
 
                           {formatTaxValue(invoice.cgst)}
 
                         </td>
 
-                        <td className="text-center">
+                        <td className="text-center" data-label="IGST">
 
                           {formatTaxValue(invoice.igst)}
 
                         </td>
 
-                        <td className="text-right py-5 space-x-2">
+                        <td className="text-right py-5 space-x-2 action-cell" data-label="Actions">
                           <button
                             onClick={() => handleEditInvoice(invoice)}
                             className="bg-slate-700 text-slate-100 px-3 py-2 rounded-xl hover:bg-slate-600 transition"
