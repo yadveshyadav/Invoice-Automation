@@ -53,7 +53,7 @@ function Sidebar({
 
         <h1 className={`sidebar-title ${collapsed ? "text-xl" : "text-3xl"} font-bold text-cyan-400 truncate`}> 
 
-          {collapsed ? "IA" : "InvoiceAI"}
+          {collapsed ? "AI" : "InvoiceAI"}
 
         </h1>
 
